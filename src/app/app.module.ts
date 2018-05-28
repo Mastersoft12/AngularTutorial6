@@ -16,6 +16,7 @@ import {
 } from '@angular/material';
 import { MaterialTestComponent } from './material-test/material-test.component';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
+import { WeatherSearchComponent } from './weather-search/weather-search.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
     ConfiguracionComponenteComponent,
     AweatherComponent,
     MaterialTestComponent,
-    WeatherForecastComponent
+    WeatherForecastComponent,
+    WeatherSearchComponent
   ],
   imports: [
     BrowserModule,
