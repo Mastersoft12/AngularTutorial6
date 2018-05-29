@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ConfiguracionComponenteComponent } from './configuracion-componente/configuracion-componente.component';
 import { AweatherComponent } from './aweather/aweather.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import {
   MatCardModule,
   MatButtonModule,
@@ -13,6 +14,7 @@ import {
   MatProgressSpinnerModule,
   MatExpansionModule,
   MatInputModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { MaterialTestComponent } from './material-test/material-test.component';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
@@ -36,7 +38,9 @@ import { WeatherSearchComponent } from './weather-search/weather-search.componen
     MatProgressSpinnerModule,
     MatExpansionModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

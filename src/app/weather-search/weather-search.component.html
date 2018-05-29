@@ -1,6 +1,9 @@
 <mat-card>
   <mat-card-content>
-    <button mat-raised-button color="primary" (click)="searchCity($event)">Buscar ciudad</button>
+    <mat-form-field>
+      <input matInput placeholder="Ciudad" name="cityName" [value]="cityName" (input)="cityName=$event.target.value">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="searchCity()">Buscar ciudad</button>
     <mat-spinner [style.visibility]="loading ? 'visible' : 'hidden'"></mat-spinner>
   </mat-card-content>
 </mat-card>

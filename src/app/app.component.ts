@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  cityName = 'Ciudad por Defecto';
+
+
+  public search(cityName: string): void {
+    this.cityName = cityName;
+  }
 }
