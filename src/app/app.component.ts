@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   cityName = 'Ciudad por Defecto';
+  sidebarMode = 'side';
 
 
   public search(cityName: string): void {
