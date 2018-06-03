@@ -13,7 +13,7 @@ import {AweatherComponent} from './aweather/aweather.component';
   declarations: [
     AweatherComponent,
     WeatherForecastComponent,
-    WeatherSearchComponent
+    WeatherSearchComponent,
   ],
   exports: [
     AweatherComponent,
