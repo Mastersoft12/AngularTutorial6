@@ -1,5 +1,5 @@
 export class Forescast {
-  date: string;
+  date: Date;
   maxTemperature: number;
   minTemperature: number;
   info: string;
