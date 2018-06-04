@@ -14,7 +14,7 @@ export class Weather {
   sunrise: string;
   sunset: string;
   rutaImage: string;
-  forecasts: Forescast;
+  forecasts: Array<Forescast>;
 
   get percentToSunset(): number {
     if (this.sunrise === undefined) {

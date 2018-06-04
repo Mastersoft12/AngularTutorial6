@@ -8,7 +8,7 @@ import {Forescast} from '../forecast-model';
 })
 export class WeatherForecastComponent implements OnInit {
 
-  @Input() forecast: Forescast;
+  @Input() forecasts: Array<Forescast>;
   constructor() { }
 
   ngOnInit() {

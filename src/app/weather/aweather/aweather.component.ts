@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Weather} from '../weather.model';
 import {Forescast} from '../forecast-model';
+import {WeatherService} from '../services/weather.service';
 
 @Component({
   selector: 'app-aweather',
@@ -11,35 +12,22 @@ export class AweatherComponent implements OnInit {
 
   weather: Weather = new Weather();
 
-  constructor() { }
+  constructor(private _weather_services: WeatherService) { }
 
   ngOnInit() {
-    console.log('ngOnInit');
- //   setTimeout(() => {
-      this.weather.city = 'Madrid';
-      this.weather.date = 'Tue, 01 May 2018 06:00 PM CEST';
-      this.weather.humidity = 32;
-      this.weather.info = 'Cloudy';
-      this.weather.maxtemperature = 94;
-      this.weather.mintemperature = 10;
-      this.weather.pressure = 1080;
-      this.weather.sunrise = '6:58 am';
-      this.weather.sunset = '11:40 pm';
-      this.weather.temperature = 80;
-      this.weather.winddirection = 270;
-      this.weather.windspeed = 26;
-      this.weather.rutaImage = 'https://drive.google.com/uc?id=1DRGmofyk2KbKvY8HF8vvqcBGj7VRXKnY';
-      this.weather.forecasts = new Forescast();
-      this.weather.forecasts.date = new Date();
-      this.weather.forecasts.day = 'Fri';
-      this.weather.forecasts.info = 'Mostly Cloudy';
-      this.weather.forecasts.maxTemperature = 88;
-      this.weather.forecasts.minTemperature = 62;
-      console.log('call to server finalizado');
-      console.log(this.weather);
- //   }, 3000);
-    console.log(this.weather);
-  }
+   this._weather_services.getWeatherInfo('Madrid, ES').subscribe(
+      data => {
+        if (data['query'].results === undefined) {
+          alert('La ciudad buscada no existe');
+        } else {
+          this.weather = this._weather_services.mapResult(data['query'].results.channel);
+        }
+      }
+    );
+
+  /*  this._weather_services.getPersona().subscribe(
+      data => {this._weather_services.mapResultPersona(data); } );*/
+ }
 
 
   public getColorTemperature(): string {

@@ -4,6 +4,8 @@ import { SharedModule } from '../shared/shared.module';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 import { WeatherSearchComponent } from './weather-search/weather-search.component';
 import {AweatherComponent} from './aweather/aweather.component';
+import {WeatherService} from './services/weather.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import {AweatherComponent} from './aweather/aweather.component';
   ],
   exports: [
     AweatherComponent,
-    WeatherSearchComponent
-  ]
+    WeatherSearchComponent,
+    HttpClientModule
+  ],
+  providers: [WeatherService]
 })
 export class WeatherModule { }
